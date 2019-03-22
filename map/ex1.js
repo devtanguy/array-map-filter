@@ -20,9 +20,16 @@ En sortie: [
 ]
 
  */
+const CoolStylesMusic = ['Cat', 'Lion', 'Tiger', 'Jaguar', 'Leopard'];
 
-function getStringsLength(strings) {
-}
+const getStringsLength = CoolStylesMusic.map( function(string)
+{
+  return {
+    string : string,
+    length: string.length
+  };
+});
+
 
 // Si besoin, tu peux toujours visualiser le résultat avec console.log,
 // mais alors, il faut alors lancer l'exercice avec node map/ex1
