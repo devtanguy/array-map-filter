@@ -20,20 +20,16 @@ En sortie: [
 ]
 
  */
-const CoolStylesMusic = ['Cat', 'Lion', 'Tiger', 'Jaguar', 'Leopard'];
 
-const getStringsLength = CoolStylesMusic.map( function(string)
-{
-  return {
-    string : string,
-    length: string.length
-  };
-});
+const getStringsLength = array => array
+  .map(value => `${value} contains ${value.length} characters`)
 
 
+console.log(getStringsLength(['Cat', 'Lion', 'Tiger', 'Jaguar', 'Leopard']));
 // Si besoin, tu peux toujours visualiser le résultat avec console.log,
 // mais alors, il faut alors lancer l'exercice avec node map/ex1
 // console.log(getStringsLength(['Cat', 'Lion', 'Tiger', 'Jaguar', 'Leopard']));
 
 // Ne pas modifier l'export
 module.exports = getStringsLength;
+

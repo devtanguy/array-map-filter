@@ -59,10 +59,42 @@ En sortie:
 
  */
 
-function getMoviesFreshness(movies) {
-}
+  const getMoviesFreshness = (movies) => movies.map(movie =>{
+  // C'est bien de retourner une nouvel objet.
+  // C'est le meme , en moins 'verbose' :)
 
+ 
+  if(movie.rating < 60){
+    movie.label = "rotten" // utilise `=` 
+    return movie;
+  }else if (movie.rating >= 60 && movie.rating <= 75 ){
+    movie.label ="fresh"
+    return movie;
+  }else if (movie.rating > 75){
+    movie.label = "certified fresh";
+    return movie
+  }});
+
+
+//   const getMoviesFreshness = (movies) => movies.map(movie =>{
+//     switch(movie.rating){
+//       case (movie.rating < 60):
+//         movie.label = "rotten"
+//         return movie;
+//       case (movie.rating >= 60 && movie.rating <= 75):
+//         movie.label = "fresh"
+//         return movie;
+//       case (movie.rating > 75):
+//         movie.label = "certified fresh"
+//         return movie;  
+//     }
+// });
 
 
 // Ne pas modifier l'export
 module.exports = getMoviesFreshness;
+
+
+// * Si `rating` est infériéur à 60, la valeur à attribuer à label sera "rotten".
+// * Si `rating` est compris entre 60 et 75 (inclus), la valeur à attribuer à label sera "fresh".
+// * Si `rating` est supérieur à 75, la valeur à attribuer à label sera "certified fresh".

@@ -50,7 +50,13 @@ Sortie attendue:
 
 */
 
-function getStudentsPerCurriculum(campuses, curriculumName) {
-}
+const getStudentsPerCurriculum = (campuses, curriculumName) => campuses
+  .filter( campus => {
+    let curriculum = campus.curriculums.name
+    if(curriculum.includes(curriculumName)){
+      return campus;
+    }
+  })
+  .map((campus) => campus.city.numStudents)
 
 module.exports = getStudentsPerCurriculum;
